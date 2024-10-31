@@ -33,5 +33,22 @@ echo $iphones[1][0]. "In stock: " . $iphones[1][1] . ", Sold: " .$iphones[1][2].
 echo $iphones[2][0]. "In stock: " . $iphones[2][1] . ", Sold: " .$iphones[2][2]. ".<br>";
 echo $iphones[3][0]. "In stock: " . $iphones[3][1] . ", Sold: " .$iphones[3][2]. ".<br>";
 
+$grade = array{
+    "Math" => "3",
+    "Art" => "5",
+    "History" => "4",
+    "Music" => "5",
+};
 
+// $grade = ['Math'] = "3",
+// $grade = ['Art'] = "5",
+// $grade = ['History'] = "4",
+// $grade = ['Music'] = "5",
+
+// echo "Math grade is " .$grade['Math'];
+
+foreach($grade as $subject => $grade){
+    echo "Subject" : ".$subject" . "/ Grade: ".$grade;
+    echo "<br>";
+}
 ?>
