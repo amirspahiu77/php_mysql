@@ -1,54 +1,56 @@
 <?php
+// $my_file = fopen("ds.text', 'w');
 
+// ● “w” – Opens a file for write-only mode. If a file does not exist then a new file is created and if the file already exists then the contents of the file are erased.
+// ● “r” – The file is opened for read-only mode.
+// ● “a” – File is opened for write-only mode. The file pointer points to the end of the file. Existing data in the file is preserved.
+// ● “w+” – Opens the file for read and write mode. If a file does not exist then a new file is created and if the file already exists then the contents of the file are erased.
+// ● “r+” – The file is opened for read/write mode.
+// ● “a+” – The file is opened for write/read mode. The file pointer points to the end of the file. Existing data in the file is preserved. If the file is not there then a new file is created.
+// ● “x” – New file is created for write-only mode. 
 
-$dogs = array{
-    array("Chihuahua ", "Mexico", 20 ),
-    array("Husky ", "Siberia", 15 ),
-    array("Bullfog ", "England", 10 ),
-};
+$my_file = fopen(filename: "ds.text", mode: 'r');
+//..other code
+fclose(stream: $my_file);
 
-echo $dogs[0][0]. "Origin: " . $dogs[0][1] . ", Life Span: " .$sogs[0][2]. ".<br>";
-echo $dogs[1][0]. "Origin: " . $dogs[1][1] . ", Life Span: " .$sogs[1][2]. ".<br>";
-echo $dogs[2][0]. "Origin: " . $dogs[2][1] . ", Life Span: " .$sogs[2][2]. ".<br>";
+//fread
 
-for ($row = 0; $row<3; $row++){
-    echo "<p><b>Row number $row </b></p>";
-    echo "<ul>"
-    for($col= 0: $col<3; $col++){
-        echo "<li>".$dogs[$row][$col]."</li>";
-    }
-    echo "</ul>";
+//set the name of fi;e to be opened
+$my_filename = "ds.txt";
+
+//open the file for reading
+$my_file = fopen(filename: $my_filename, mode : 'r');
+
+//get the size of the file
+$my_size = filesize(filename: $my_filename);
+
+//Read the contents of the file into a variable
+$my_filedate = fread(stream: $my_file, length: $my_size);
+
+//feof
+//Open the file 'example.text' for reading using hte fopen method
+$file = fopen(filename: 'example.txt', mode: 'r');
+
+//use a while loop toreadeach line of the file using fgets and print it to the screen with echo
+while(!feof(stream: $file)){
+    echo fgets(stream: ($file),length: "<br>");
+
 }
 
+// Close the file using fclose
+fclose(stream: $file);
 
-$iphones = array{
-        array("Iphone 14 ", "20", 12 ),
-        array("Iphone 13 ", "20", 20 ),
-        array("Iphone 12 ", "20", 25 ),
-        array("Iphone 11 ", "25", 40 ),
-};
+//fwrite
+$my_file1 = fopen(filename: 'ds.txt', mode: 'w');
 
-echo $iphones[0][0]. "In stock: " . $iphones[0][1] . ", Sold: " .$iphones[0][2]. ".<br>";
-echo $iphones[1][0]. "In stock: " . $iphones[1][1] . ", Sold: " .$iphones[1][2]. ".<br>";
-echo $iphones[2][0]. "In stock: " . $iphones[2][1] . ", Sold: " .$iphones[2][2]. ".<br>";
-echo $iphones[3][0]. "In stock: " . $iphones[3][1] . ", Sold: " .$iphones[3][2]. ".<br>";
+//Set the text to be written to the file
+$my_text = "Digital School";
 
-$grade = array{
-    "Math" => "3",
-    "Art" => "5",
-    "History" => "4",
-    "Music" => "5",
-};
+fwrite(stream: $my_file1, data: $my_text);
 
-// $grade = ['Math'] = "3",
-// $grade = ['Art'] = "5",
-// $grade = ['History'] = "4",
-// $grade = ['Music'] = "5",
+//file_put_contents
+//Create a new file and add text
+file_pit_contents(filename: 'test.txt', data: 'Add some text in here');
+echo file_put_contents(filename: 'test.txt');
 
-// echo "Math grade is " .$grade['Math'];
-
-foreach($grade as $subject => $grade){
-    echo "Subject" : ".$subject" . "/ Grade: ".$grade;
-    echo "<br>";
-}
 ?>
