@@ -37,9 +37,26 @@ $result = $conn->query("SELECT * FROM products");
     <h1>Product Management</h1>
     <h3>Add Product</h3>
     <form action="" method="POST">
-        <input type="text" name="rirle" placeholder="title">
+        <input type="text" name="title" placeholder="title" required>
         <textarea name="description" placeholder="Description"></textarea>
-        <input type="number" name="quantity" placeholder>
+        <input type="number" name="quantity" placeholder="Quantity" required>
+        <input type="number" name="price" placeholder="Price" required>
+        <button type="submit" name="add_product">Add Product</button>
     </form>
+
+    <h3>Product List</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    </table>
+
 </body>
 </html>
