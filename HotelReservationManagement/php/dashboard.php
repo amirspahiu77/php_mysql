@@ -1,22 +1,29 @@
 <?php
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header('!Location: login.php');
-}
-
 require 'config.php';
-
-$rooms = $pdo->query("SELECT * FROM reservation")->fetchAll();
-
-echo "<h2>Reservation</h2>";
-foreach ($rooms as $room) {
-    echo "
-    <p>{$room['room_number']} - {$room['status']}
-    <a href='edit.php?id={$room['id']}'>Edit</a>
-    <a href='delete.php?id={$room['id']}'>Delete</a>
-    </p>";
-}
-
-echo "<a href='create.php'>Create New Reservation</a>";
-echo "<br> <a href='logout.php'>Logout</a>";
+require 'auth.php';
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Reservations</h2>
+        <?php
+        $rooms = $pdo->query("SELECT * FROM reservation")->fetchAll();
+        foreach ($rooms as $room) {
+            echo "<p>{$room['room_number']} - {$room['status']} <a href='edit.php?id={$room['id']}'>Edit</a> | 
+            <a href='delete.php?id={$room['id']}'>Delete</a> </p>";
+        }
+        ?>
+        <a href="create.php" class="button">Create New Reservation</a>
+        <br><br>
+        <a href="logout.php" class="button">Logout</a>
+    </div>
+</body>
+</html>
+
