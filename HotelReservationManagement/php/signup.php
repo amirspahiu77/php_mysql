@@ -20,7 +20,7 @@ require 'config.php';
             $stmt->execute([$username, $password]);
             header('Location: login.php');
             exit();
-        }
+        };
         ?>
         <form method="POST">
             <input type="text" name="username" placeholder="Username" required>
