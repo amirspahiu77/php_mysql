@@ -1,7 +1,4 @@
-<?php
-require 'auth.php';
-require 'config.php';
-?>
+<?php require 'authentication.php'; require 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,21 +8,21 @@ require 'config.php';
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class='form-container'>
-        <h2>Create New Reservations</h2>
+    <div class="form-container">
+        <h2>Create New Reservation</h2>
         <?php
         if (isset($_POST['create'])) {
-            $stmt = $pdo->prepare("INSERT into reservations (room_number, status VALUES (?, ?))");
+            $stmt = $pdo->prepare("INSERT INTO reservations (room_number, status) VALUES (?, ?)");
             $stmt->execute([$_POST['room_number'], $_POST['status']]);
             header('Location: dashboard.php');
             exit();
         }
         ?>
-    <form method="POST">
-        <input type="text" name="room_number" placeholder="Room Number" required>
-        <input type="text" name="status" placeholder="Status (Booked/Avaiable)" required>
-        <button type="submit" name="create">Create</button>
-    </form>
+        <form method="POST">
+            <input type="text" name="room_number" placeholder="Room Number" required>
+            <input type="text" name="status" placeholder="Status (Booked/Available)" required>
+            <button type="submit" name="create">Create</button>
+        </form>
     </div>
 </body>
 </html>

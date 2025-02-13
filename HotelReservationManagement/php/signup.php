@@ -1,26 +1,24 @@
-<?php
-require 'config.php';
-?>
+<?php require 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Signup</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="form-container">
-        <h2>Create An Account</h2>
+        <h2>Create an Account</h2>
         <?php
-        if (isset($_POST['signup'])){
+        if (isset($_POST['signup'])) {
             $username = $_POST['username'];
             $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
             $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
             $stmt->execute([$username, $password]);
             header('Location: login.php');
             exit();
-        };
+        }
         ?>
         <form method="POST">
             <input type="text" name="username" placeholder="Username" required>
