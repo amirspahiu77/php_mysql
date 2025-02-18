@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="form-container">
+    <div class="form-container2">
         <h2>Login</h2>
         <?php
         if (isset($_POST['login'])) {
@@ -27,7 +27,7 @@
         <form method="POST">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" name="login">Login</button>
+            <button class="btn1" type="submit" name="login">Login</button>
         </form>
     </div>
 </body>

@@ -21,7 +21,7 @@
         <form method="POST">
             <input type="text" name="room_number" placeholder="Room Number" required>
             <input type="text" name="status" placeholder="Status (Booked/Available)" required>
-            <button type="submit" name="create">Create</button>
+            <button class="btncreate" type="submit" name="create">Create</button>
         </form>
     </div>
 </body>

@@ -1,20 +1,37 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #e4f1fe;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
     height: 100vh;
     margin: 0;
 }
 
-.form-container, .container {
+.form-container {
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    width: 300px;
+    width: 1000px;
     text-align: center;
+    text-decoration: none;
+}
+.container {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 1000px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.form-container2 {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 1000px;
+    text-align: center;
+    text-decoration: none;
 }
 
 h2 {
@@ -25,20 +42,63 @@ input[type="text"], input[type="password"], input[type="date"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid #ccc;
 }
 
 button, .button {
-    background-color: #007bff;
+    background-color: #2198d3;
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    width: 100%;
+    width: 104%;
+    text-decoration: none;
+}
+.btncreate {
+    background-color: #832121;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 104%;
+    text-decoration: none;
+}
+.btn1 {
+    background-color: #20842d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 104%;
+    text-decoration: none;
+}
+.btnc {
+    background-color: #832121;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 300px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: #832121;
+}
+
+.btnc:hover {
+    background-color: #2f0707;
+}
+
+.btn1:hover {
+    background-color: #0a4b13;
 }
 
 button:hover, .button:hover {
-    background-color: #0056b3;
+    background-color: #094381;
+}
+
+.btncreate:hover {
+    background-color: #2f0707;
 }

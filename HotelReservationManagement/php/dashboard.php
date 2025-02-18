@@ -16,9 +16,9 @@
             echo "<p>{$room['room_number']} - {$room['status']} <a href='edit.php?id={$room['id']}'>Edit</a> | <a href='delete.php?id={$room['id']}'>Delete</a> </p>";
         }
         ?>
-        <a href="create.php" class="button">Create New Reservation</a>
+        <a href="create.php" class="btnc">Create New Reservation</a>
         <br><br>
-        <a href="logout.php" class="button">Logout</a>
+        <a href="logout.php" class="btnc">Logout</a>
     </div>
 </body>
 </html>
