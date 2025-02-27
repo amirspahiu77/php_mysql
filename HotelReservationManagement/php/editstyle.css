@@ -13,7 +13,6 @@ body {
     height: 100vh;
 }
 
-/* Form Container */
 .form-container {
     background: #fff;
     padding: 25px;
@@ -28,7 +27,6 @@ h2 {
     color: #333;
 }
 
-/* Input Fields */
 input[type="text"], input[type="hidden"] {
     width: 100%;
     padding: 10px;
@@ -38,7 +36,6 @@ input[type="text"], input[type="hidden"] {
     font-size: 14px;
 }
 
-/* Buttons */
 button {
     width: 100%;
     padding: 10px;
@@ -56,7 +53,6 @@ button:hover {
     background: #0056b3;
 }
 
-/* Mobile-Friendly */
 @media (max-width: 400px) {
     .form-container {
         width: 90%;
